@@ -42,13 +42,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnPrincipal = new System.Windows.Forms.Button();
             this.dgvAgregarPacientes = new System.Windows.Forms.DataGridView();
-            this.dgvAgregarDiagn = new System.Windows.Forms.DataGridView();
-            this.cbbIngDiagnostico = new System.Windows.Forms.ComboBox();
-            this.lbIngExamen = new System.Windows.Forms.Label();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diagnosticoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.historialMedicoDataSet = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSet();
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +49,20 @@
             this.diagnosticoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaExamenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.historialMedicoDataSet = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSet();
+            this.dgvAgregarDiagn = new System.Windows.Forms.DataGridView();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diagnosticoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbIngDiagnostico = new System.Windows.Forms.ComboBox();
+            this.lbIngExamen = new System.Windows.Forms.Label();
             this.pacientesTableAdapter = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSetTableAdapters.PacientesTableAdapter();
             this.diagnosticoTableAdapter = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSetTableAdapters.DiagnosticoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgregarPacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgregarDiagn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diagnosticoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIngRut
@@ -99,9 +99,9 @@
             this.lbIngRut.AutoSize = true;
             this.lbIngRut.Location = new System.Drawing.Point(31, 44);
             this.lbIngRut.Name = "lbIngRut";
-            this.lbIngRut.Size = new System.Drawing.Size(68, 13);
+            this.lbIngRut.Size = new System.Drawing.Size(120, 13);
             this.lbIngRut.TabIndex = 4;
-            this.lbIngRut.Text = "Ingreso RUT";
+            this.lbIngRut.Text = "Ingreso RUT (xxxxxxx-x)";
             // 
             // lbIngNombre
             // 
@@ -188,63 +188,6 @@
             this.dgvAgregarPacientes.Size = new System.Drawing.Size(591, 240);
             this.dgvAgregarPacientes.TabIndex = 12;
             // 
-            // dgvAgregarDiagn
-            // 
-            this.dgvAgregarDiagn.AutoGenerateColumns = false;
-            this.dgvAgregarDiagn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvAgregarDiagn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAgregarDiagn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgregarDiagn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
-            this.dgvAgregarDiagn.DataSource = this.diagnosticoBindingSource;
-            this.dgvAgregarDiagn.Location = new System.Drawing.Point(678, 196);
-            this.dgvAgregarDiagn.Name = "dgvAgregarDiagn";
-            this.dgvAgregarDiagn.Size = new System.Drawing.Size(331, 240);
-            this.dgvAgregarDiagn.TabIndex = 13;
-            // 
-            // cbbIngDiagnostico
-            // 
-            this.cbbIngDiagnostico.FormattingEnabled = true;
-            this.cbbIngDiagnostico.Location = new System.Drawing.Point(700, 60);
-            this.cbbIngDiagnostico.Name = "cbbIngDiagnostico";
-            this.cbbIngDiagnostico.Size = new System.Drawing.Size(98, 21);
-            this.cbbIngDiagnostico.TabIndex = 14;
-            this.cbbIngDiagnostico.Text = "Seleccione";
-            // 
-            // lbIngExamen
-            // 
-            this.lbIngExamen.AutoSize = true;
-            this.lbIngExamen.Location = new System.Drawing.Point(467, 44);
-            this.lbIngExamen.Name = "lbIngExamen";
-            this.lbIngExamen.Size = new System.Drawing.Size(83, 13);
-            this.lbIngExamen.TabIndex = 15;
-            this.lbIngExamen.Text = "Ingrese Examen";
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // diagnosticoBindingSource
-            // 
-            this.diagnosticoBindingSource.DataMember = "Diagnostico";
-            this.diagnosticoBindingSource.DataSource = this.historialMedicoDataSet;
-            // 
-            // historialMedicoDataSet
-            // 
-            this.historialMedicoDataSet.DataSetName = "HistorialMedicoDataSet";
-            this.historialMedicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // registroDataGridViewTextBoxColumn
             // 
             this.registroDataGridViewTextBoxColumn.DataPropertyName = "Registro";
@@ -292,6 +235,63 @@
             this.pacientesBindingSource.DataMember = "Pacientes";
             this.pacientesBindingSource.DataSource = this.historialMedicoDataSet;
             // 
+            // historialMedicoDataSet
+            // 
+            this.historialMedicoDataSet.DataSetName = "HistorialMedicoDataSet";
+            this.historialMedicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dgvAgregarDiagn
+            // 
+            this.dgvAgregarDiagn.AutoGenerateColumns = false;
+            this.dgvAgregarDiagn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAgregarDiagn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvAgregarDiagn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAgregarDiagn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.dgvAgregarDiagn.DataSource = this.diagnosticoBindingSource;
+            this.dgvAgregarDiagn.Location = new System.Drawing.Point(678, 196);
+            this.dgvAgregarDiagn.Name = "dgvAgregarDiagn";
+            this.dgvAgregarDiagn.Size = new System.Drawing.Size(331, 240);
+            this.dgvAgregarDiagn.TabIndex = 13;
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // diagnosticoBindingSource
+            // 
+            this.diagnosticoBindingSource.DataMember = "Diagnostico";
+            this.diagnosticoBindingSource.DataSource = this.historialMedicoDataSet;
+            // 
+            // cbbIngDiagnostico
+            // 
+            this.cbbIngDiagnostico.FormattingEnabled = true;
+            this.cbbIngDiagnostico.Location = new System.Drawing.Point(700, 60);
+            this.cbbIngDiagnostico.Name = "cbbIngDiagnostico";
+            this.cbbIngDiagnostico.Size = new System.Drawing.Size(98, 21);
+            this.cbbIngDiagnostico.TabIndex = 14;
+            this.cbbIngDiagnostico.Text = "Seleccione";
+            // 
+            // lbIngExamen
+            // 
+            this.lbIngExamen.AutoSize = true;
+            this.lbIngExamen.Location = new System.Drawing.Point(467, 44);
+            this.lbIngExamen.Name = "lbIngExamen";
+            this.lbIngExamen.Size = new System.Drawing.Size(83, 13);
+            this.lbIngExamen.TabIndex = 15;
+            this.lbIngExamen.Text = "Ingrese Examen";
+            // 
             // pacientesTableAdapter
             // 
             this.pacientesTableAdapter.ClearBeforeFill = true;
@@ -325,10 +325,10 @@
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.Agregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgregarPacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgregarDiagn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diagnosticoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

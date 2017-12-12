@@ -33,7 +33,7 @@
             this.historialMedicoDataSet = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSet();
             this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pacientesTableAdapter = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSetTableAdapters.PacientesTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHistExam = new System.Windows.Forms.DataGridView();
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource1)).BeginInit();
             this.historialExamenesToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -68,11 +68,13 @@
             // 
             this.pacientesTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // dgvHistExam
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHistExam.AutoGenerateColumns = false;
+            this.dgvHistExam.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHistExam.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvHistExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistExam.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.registroDataGridViewTextBoxColumn,
             this.rutDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
@@ -80,11 +82,11 @@
             this.diagnosticoDataGridViewTextBoxColumn,
             this.fechaExamenDataGridViewTextBoxColumn,
             this.examenDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pacientesBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(770, 186);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvHistExam.DataSource = this.pacientesBindingSource1;
+            this.dgvHistExam.Location = new System.Drawing.Point(12, 78);
+            this.dgvHistExam.Name = "dgvHistExam";
+            this.dgvHistExam.Size = new System.Drawing.Size(770, 186);
+            this.dgvHistExam.TabIndex = 0;
             // 
             // registroDataGridViewTextBoxColumn
             // 
@@ -92,30 +94,35 @@
             this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
             this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
             this.registroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn.Width = 71;
             // 
             // rutDataGridViewTextBoxColumn
             // 
             this.rutDataGridViewTextBoxColumn.DataPropertyName = "Rut";
             this.rutDataGridViewTextBoxColumn.HeaderText = "Rut";
             this.rutDataGridViewTextBoxColumn.Name = "rutDataGridViewTextBoxColumn";
+            this.rutDataGridViewTextBoxColumn.Width = 49;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
             // 
             // mailDataGridViewTextBoxColumn
             // 
             this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
             this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
             this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.Width = 51;
             // 
             // diagnosticoDataGridViewTextBoxColumn
             // 
             this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
+            this.diagnosticoDataGridViewTextBoxColumn.Width = 88;
             // 
             // fechaExamenDataGridViewTextBoxColumn
             // 
@@ -128,6 +135,7 @@
             this.examenDataGridViewTextBoxColumn.DataPropertyName = "Examen";
             this.examenDataGridViewTextBoxColumn.HeaderText = "Examen";
             this.examenDataGridViewTextBoxColumn.Name = "examenDataGridViewTextBoxColumn";
+            this.examenDataGridViewTextBoxColumn.Width = 70;
             // 
             // pacientesBindingSource1
             // 
@@ -182,13 +190,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 361);
             this.Controls.Add(this.historialExamenesToolStrip);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvHistExam);
             this.Name = "Buscar";
             this.Text = "Buscar";
             this.Load += new System.EventHandler(this.Buscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistExam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource1)).EndInit();
             this.historialExamenesToolStrip.ResumeLayout(false);
             this.historialExamenesToolStrip.PerformLayout();
@@ -201,7 +209,7 @@
         private HistorialMedicoDataSet historialMedicoDataSet;
         private System.Windows.Forms.BindingSource pacientesBindingSource;
         private HistorialMedicoDataSetTableAdapters.PacientesTableAdapter pacientesTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHistExam;
         private System.Windows.Forms.DataGridViewTextBoxColumn registroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rutDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;

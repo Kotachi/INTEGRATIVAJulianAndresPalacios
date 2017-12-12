@@ -44,13 +44,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnPrincipal = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.historialMedicoDataSet = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSet();
-            this.pacientesTableAdapter = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSetTableAdapters.PacientesTableAdapter();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.lbModExamen = new System.Windows.Forms.Label();
-            this.txtModExamen = new System.Windows.Forms.TextBox();
-            this.cbbModDiagnostico = new System.Windows.Forms.ComboBox();
-            this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +51,16 @@
             this.diagnosticoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaExamenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.examenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.historialMedicoDataSet = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSet();
+            this.pacientesTableAdapter = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSetTableAdapters.PacientesTableAdapter();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.lbModExamen = new System.Windows.Forms.Label();
+            this.txtModExamen = new System.Windows.Forms.TextBox();
+            this.cbbModDiagnostico = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtModRegistro
@@ -122,9 +122,9 @@
             this.lbModRut.AutoSize = true;
             this.lbModRut.Location = new System.Drawing.Point(173, 38);
             this.lbModRut.Name = "lbModRut";
-            this.lbModRut.Size = new System.Drawing.Size(73, 13);
+            this.lbModRut.Size = new System.Drawing.Size(115, 13);
             this.lbModRut.TabIndex = 7;
-            this.lbModRut.Text = "Modifique Rut";
+            this.lbModRut.Text = "Modifique Rut (xxxxx-x)";
             // 
             // lbModNombre
             // 
@@ -202,6 +202,60 @@
             this.dgvPacientes.Size = new System.Drawing.Size(668, 150);
             this.dgvPacientes.TabIndex = 14;
             // 
+            // registroDataGridViewTextBoxColumn
+            // 
+            this.registroDataGridViewTextBoxColumn.DataPropertyName = "Registro";
+            this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
+            this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
+            this.registroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // rutDataGridViewTextBoxColumn
+            // 
+            this.rutDataGridViewTextBoxColumn.DataPropertyName = "Rut";
+            this.rutDataGridViewTextBoxColumn.HeaderText = "Rut";
+            this.rutDataGridViewTextBoxColumn.Name = "rutDataGridViewTextBoxColumn";
+            this.rutDataGridViewTextBoxColumn.Width = 49;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // mailDataGridViewTextBoxColumn
+            // 
+            this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
+            this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
+            this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // diagnosticoDataGridViewTextBoxColumn
+            // 
+            this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "Diagnostico";
+            this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnostico";
+            this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
+            this.diagnosticoDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // fechaExamenDataGridViewTextBoxColumn
+            // 
+            this.fechaExamenDataGridViewTextBoxColumn.DataPropertyName = "FechaExamen";
+            this.fechaExamenDataGridViewTextBoxColumn.HeaderText = "FechaExamen";
+            this.fechaExamenDataGridViewTextBoxColumn.Name = "fechaExamenDataGridViewTextBoxColumn";
+            // 
+            // examenDataGridViewTextBoxColumn
+            // 
+            this.examenDataGridViewTextBoxColumn.DataPropertyName = "Examen";
+            this.examenDataGridViewTextBoxColumn.HeaderText = "Examen";
+            this.examenDataGridViewTextBoxColumn.Name = "examenDataGridViewTextBoxColumn";
+            this.examenDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // pacientesBindingSource
+            // 
+            this.pacientesBindingSource.DataMember = "Pacientes";
+            this.pacientesBindingSource.DataSource = this.historialMedicoDataSet;
+            // 
             // historialMedicoDataSet
             // 
             this.historialMedicoDataSet.DataSetName = "HistorialMedicoDataSet";
@@ -253,60 +307,6 @@
             this.cbbModDiagnostico.Size = new System.Drawing.Size(81, 21);
             this.cbbModDiagnostico.TabIndex = 18;
             // 
-            // pacientesBindingSource
-            // 
-            this.pacientesBindingSource.DataMember = "Pacientes";
-            this.pacientesBindingSource.DataSource = this.historialMedicoDataSet;
-            // 
-            // registroDataGridViewTextBoxColumn
-            // 
-            this.registroDataGridViewTextBoxColumn.DataPropertyName = "Registro";
-            this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
-            this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
-            this.registroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.registroDataGridViewTextBoxColumn.Width = 71;
-            // 
-            // rutDataGridViewTextBoxColumn
-            // 
-            this.rutDataGridViewTextBoxColumn.DataPropertyName = "Rut";
-            this.rutDataGridViewTextBoxColumn.HeaderText = "Rut";
-            this.rutDataGridViewTextBoxColumn.Name = "rutDataGridViewTextBoxColumn";
-            this.rutDataGridViewTextBoxColumn.Width = 49;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // mailDataGridViewTextBoxColumn
-            // 
-            this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
-            this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
-            this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
-            this.mailDataGridViewTextBoxColumn.Width = 51;
-            // 
-            // diagnosticoDataGridViewTextBoxColumn
-            // 
-            this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "Diagnostico";
-            this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnostico";
-            this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
-            this.diagnosticoDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // fechaExamenDataGridViewTextBoxColumn
-            // 
-            this.fechaExamenDataGridViewTextBoxColumn.DataPropertyName = "FechaExamen";
-            this.fechaExamenDataGridViewTextBoxColumn.HeaderText = "FechaExamen";
-            this.fechaExamenDataGridViewTextBoxColumn.Name = "fechaExamenDataGridViewTextBoxColumn";
-            // 
-            // examenDataGridViewTextBoxColumn
-            // 
-            this.examenDataGridViewTextBoxColumn.DataPropertyName = "Examen";
-            this.examenDataGridViewTextBoxColumn.HeaderText = "Examen";
-            this.examenDataGridViewTextBoxColumn.Name = "examenDataGridViewTextBoxColumn";
-            this.examenDataGridViewTextBoxColumn.Width = 70;
-            // 
             // Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,8 +335,8 @@
             this.Text = "Modificar";
             this.Load += new System.EventHandler(this.Modificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

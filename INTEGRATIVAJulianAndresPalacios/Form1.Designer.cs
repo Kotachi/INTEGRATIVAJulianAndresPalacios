@@ -131,6 +131,8 @@
             // dgvPrpal
             // 
             this.dgvPrpal.AutoGenerateColumns = false;
+            this.dgvPrpal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPrpal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPrpal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrpal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.registroDataGridViewTextBoxColumn,
@@ -152,30 +154,35 @@
             this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
             this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
             this.registroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn.Width = 71;
             // 
             // rutDataGridViewTextBoxColumn
             // 
             this.rutDataGridViewTextBoxColumn.DataPropertyName = "Rut";
             this.rutDataGridViewTextBoxColumn.HeaderText = "Rut";
             this.rutDataGridViewTextBoxColumn.Name = "rutDataGridViewTextBoxColumn";
+            this.rutDataGridViewTextBoxColumn.Width = 49;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
             // 
             // mailDataGridViewTextBoxColumn
             // 
             this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
             this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
             this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.Width = 51;
             // 
             // diagnosticoDataGridViewTextBoxColumn
             // 
             this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
+            this.diagnosticoDataGridViewTextBoxColumn.Width = 88;
             // 
             // fechaExamenDataGridViewTextBoxColumn
             // 
@@ -188,6 +195,7 @@
             this.examenDataGridViewTextBoxColumn.DataPropertyName = "Examen";
             this.examenDataGridViewTextBoxColumn.HeaderText = "Examen";
             this.examenDataGridViewTextBoxColumn.Name = "examenDataGridViewTextBoxColumn";
+            this.examenDataGridViewTextBoxColumn.Width = 70;
             // 
             // pacientesBindingSource
             // 

@@ -131,7 +131,7 @@ SELECT Registro, Rut, Nombre, Mail, Examen, Diagnostico, FechaExamen FROM Pacien
             <Sources>
               <DbSource ConnectionRef="HistorialMedicoConnectionString (Settings)" DbObjectName="dbo.Pacientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="BUSCAR" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="BUSCAR" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="BUSCAR">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Registro, Rut, Nombre, Mail, Examen, Diagnostico, FechaExamen
 FROM            Pacientes
 WHERE        (Rut = @RUT)</CommandText>
@@ -173,7 +173,7 @@ WHERE        (Rut = @RUT)</CommandText>
   <xs:element name="HistorialMedicoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HistorialMedicoDataSet" msprop:Generator_UserDSName="HistorialMedicoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Diagnostico" msprop:Generator_TableClassName="DiagnosticoDataTable" msprop:Generator_TableVarName="tableDiagnostico" msprop:Generator_TablePropName="Diagnostico" msprop:Generator_RowDeletingName="DiagnosticoRowDeleting" msprop:Generator_RowChangingName="DiagnosticoRowChanging" msprop:Generator_RowEvHandlerName="DiagnosticoRowChangeEventHandler" msprop:Generator_RowDeletedName="DiagnosticoRowDeleted" msprop:Generator_UserTableName="Diagnostico" msprop:Generator_RowChangedName="DiagnosticoRowChanged" msprop:Generator_RowEvArgName="DiagnosticoRowChangeEvent" msprop:Generator_RowClassName="DiagnosticoRow">
+        <xs:element name="Diagnostico" msprop:Generator_TableClassName="DiagnosticoDataTable" msprop:Generator_TableVarName="tableDiagnostico" msprop:Generator_RowChangedName="DiagnosticoRowChanged" msprop:Generator_TablePropName="Diagnostico" msprop:Generator_RowDeletingName="DiagnosticoRowDeleting" msprop:Generator_RowChangingName="DiagnosticoRowChanging" msprop:Generator_RowEvHandlerName="DiagnosticoRowChangeEventHandler" msprop:Generator_RowDeletedName="DiagnosticoRowDeleted" msprop:Generator_RowClassName="DiagnosticoRow" msprop:Generator_UserTableName="Diagnostico" msprop:Generator_RowEvArgName="DiagnosticoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo">
@@ -193,7 +193,7 @@ WHERE        (Rut = @RUT)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Pacientes" msprop:Generator_TableClassName="PacientesDataTable" msprop:Generator_TableVarName="tablePacientes" msprop:Generator_TablePropName="Pacientes" msprop:Generator_RowDeletingName="PacientesRowDeleting" msprop:Generator_RowChangingName="PacientesRowChanging" msprop:Generator_RowEvHandlerName="PacientesRowChangeEventHandler" msprop:Generator_RowDeletedName="PacientesRowDeleted" msprop:Generator_UserTableName="Pacientes" msprop:Generator_RowChangedName="PacientesRowChanged" msprop:Generator_RowEvArgName="PacientesRowChangeEvent" msprop:Generator_RowClassName="PacientesRow">
+        <xs:element name="Pacientes" msprop:Generator_TableClassName="PacientesDataTable" msprop:Generator_TableVarName="tablePacientes" msprop:Generator_RowChangedName="PacientesRowChanged" msprop:Generator_TablePropName="Pacientes" msprop:Generator_RowDeletingName="PacientesRowDeleting" msprop:Generator_RowChangingName="PacientesRowChanging" msprop:Generator_RowEvHandlerName="PacientesRowChangeEventHandler" msprop:Generator_RowDeletedName="PacientesRowDeleted" msprop:Generator_RowClassName="PacientesRow" msprop:Generator_UserTableName="Pacientes" msprop:Generator_RowEvArgName="PacientesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Registro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRegistro" msprop:Generator_ColumnPropNameInRow="Registro" msprop:Generator_ColumnPropNameInTable="RegistroColumn" msprop:Generator_UserColumnName="Registro" type="xs:int" />

@@ -38,9 +38,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnPrincipal = new System.Windows.Forms.Button();
             this.dgvEliRegistros = new System.Windows.Forms.DataGridView();
-            this.historialMedicoDataSet = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSet();
-            this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pacientesTableAdapter = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSetTableAdapters.PacientesTableAdapter();
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +45,12 @@
             this.diagnosticoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaExamenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.examenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.historialMedicoDataSet = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSet();
+            this.pacientesTableAdapter = new INTEGRATIVAJulianAndresPalacios.HistorialMedicoDataSetTableAdapters.PacientesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliRegistros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpEliminarFecha
@@ -132,6 +132,8 @@
             // dgvEliRegistros
             // 
             this.dgvEliRegistros.AutoGenerateColumns = false;
+            this.dgvEliRegistros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEliRegistros.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEliRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEliRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.registroDataGridViewTextBoxColumn,
@@ -147,50 +149,41 @@
             this.dgvEliRegistros.Size = new System.Drawing.Size(765, 218);
             this.dgvEliRegistros.TabIndex = 8;
             // 
-            // historialMedicoDataSet
-            // 
-            this.historialMedicoDataSet.DataSetName = "HistorialMedicoDataSet";
-            this.historialMedicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pacientesBindingSource
-            // 
-            this.pacientesBindingSource.DataMember = "Pacientes";
-            this.pacientesBindingSource.DataSource = this.historialMedicoDataSet;
-            // 
-            // pacientesTableAdapter
-            // 
-            this.pacientesTableAdapter.ClearBeforeFill = true;
-            // 
             // registroDataGridViewTextBoxColumn
             // 
             this.registroDataGridViewTextBoxColumn.DataPropertyName = "Registro";
             this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
             this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
             this.registroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn.Width = 71;
             // 
             // rutDataGridViewTextBoxColumn
             // 
             this.rutDataGridViewTextBoxColumn.DataPropertyName = "Rut";
             this.rutDataGridViewTextBoxColumn.HeaderText = "Rut";
             this.rutDataGridViewTextBoxColumn.Name = "rutDataGridViewTextBoxColumn";
+            this.rutDataGridViewTextBoxColumn.Width = 49;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
             // 
             // mailDataGridViewTextBoxColumn
             // 
             this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
             this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
             this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.Width = 51;
             // 
             // diagnosticoDataGridViewTextBoxColumn
             // 
             this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
+            this.diagnosticoDataGridViewTextBoxColumn.Width = 88;
             // 
             // fechaExamenDataGridViewTextBoxColumn
             // 
@@ -203,6 +196,21 @@
             this.examenDataGridViewTextBoxColumn.DataPropertyName = "Examen";
             this.examenDataGridViewTextBoxColumn.HeaderText = "Examen";
             this.examenDataGridViewTextBoxColumn.Name = "examenDataGridViewTextBoxColumn";
+            this.examenDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // pacientesBindingSource
+            // 
+            this.pacientesBindingSource.DataMember = "Pacientes";
+            this.pacientesBindingSource.DataSource = this.historialMedicoDataSet;
+            // 
+            // historialMedicoDataSet
+            // 
+            this.historialMedicoDataSet.DataSetName = "HistorialMedicoDataSet";
+            this.historialMedicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pacientesTableAdapter
+            // 
+            this.pacientesTableAdapter.ClearBeforeFill = true;
             // 
             // Eliminar
             // 
@@ -222,8 +230,8 @@
             this.Text = "Eliminar";
             this.Load += new System.EventHandler(this.Eliminar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliRegistros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHisDiagn = new System.Windows.Forms.DataGridView();
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +49,23 @@
             this.fecha2ToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.historialDiagnosticosToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.btnPrincipal = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cbbDiagnBus = new System.Windows.Forms.ToolStripComboBox();
+            this.lbDiagnostico = new System.Windows.Forms.ToolStripLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHisDiagn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).BeginInit();
             this.historialDiagnosticosToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvHisDiagn
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHisDiagn.AutoGenerateColumns = false;
+            this.dgvHisDiagn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHisDiagn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvHisDiagn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHisDiagn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.registroDataGridViewTextBoxColumn,
             this.rutDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
@@ -67,11 +73,11 @@
             this.diagnosticoDataGridViewTextBoxColumn,
             this.fechaExamenDataGridViewTextBoxColumn,
             this.examenDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pacientesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 112);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvHisDiagn.DataSource = this.pacientesBindingSource;
+            this.dgvHisDiagn.Location = new System.Drawing.Point(34, 112);
+            this.dgvHisDiagn.Name = "dgvHisDiagn";
+            this.dgvHisDiagn.Size = new System.Drawing.Size(744, 150);
+            this.dgvHisDiagn.TabIndex = 0;
             // 
             // registroDataGridViewTextBoxColumn
             // 
@@ -79,30 +85,35 @@
             this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
             this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
             this.registroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn.Width = 71;
             // 
             // rutDataGridViewTextBoxColumn
             // 
             this.rutDataGridViewTextBoxColumn.DataPropertyName = "Rut";
             this.rutDataGridViewTextBoxColumn.HeaderText = "Rut";
             this.rutDataGridViewTextBoxColumn.Name = "rutDataGridViewTextBoxColumn";
+            this.rutDataGridViewTextBoxColumn.Width = 49;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
             // 
             // mailDataGridViewTextBoxColumn
             // 
             this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
             this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
             this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.Width = 51;
             // 
             // diagnosticoDataGridViewTextBoxColumn
             // 
             this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnostico";
             this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
+            this.diagnosticoDataGridViewTextBoxColumn.Width = 88;
             // 
             // fechaExamenDataGridViewTextBoxColumn
             // 
@@ -115,6 +126,7 @@
             this.examenDataGridViewTextBoxColumn.DataPropertyName = "Examen";
             this.examenDataGridViewTextBoxColumn.HeaderText = "Examen";
             this.examenDataGridViewTextBoxColumn.Name = "examenDataGridViewTextBoxColumn";
+            this.examenDataGridViewTextBoxColumn.Width = 70;
             // 
             // pacientesBindingSource
             // 
@@ -135,6 +147,8 @@
             this.historialDiagnosticosToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rutToolStripLabel,
             this.rutToolStripTextBox,
+            this.lbDiagnostico,
+            this.cbbDiagnBus,
             this.fecha1ToolStripLabel,
             this.fecha1ToolStripTextBox,
             this.fecha2ToolStripLabel,
@@ -197,18 +211,57 @@
             this.btnPrincipal.UseVisualStyleBackColor = true;
             this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click);
             // 
+            // cbbDiagnBus
+            // 
+            this.cbbDiagnBus.Items.AddRange(new object[] {
+            "I",
+            "H",
+            "G",
+            "A",
+            "B",
+            "D",
+            "E"});
+            this.cbbDiagnBus.Name = "cbbDiagnBus";
+            this.cbbDiagnBus.Size = new System.Drawing.Size(121, 25);
+            // 
+            // lbDiagnostico
+            // 
+            this.lbDiagnostico.Name = "lbDiagnostico";
+            this.lbDiagnostico.Size = new System.Drawing.Size(73, 22);
+            this.lbDiagnostico.Text = "Diagnostico:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(378, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "dd-mm-yyyy";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(528, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "dd-mm-yyyy";
+            // 
             // BuscarDiagnosticos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 407);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrincipal);
             this.Controls.Add(this.historialDiagnosticosToolStrip);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvHisDiagn);
             this.Name = "BuscarDiagnosticos";
             this.Text = "BuscarDiagnosticos";
             this.Load += new System.EventHandler(this.BuscarDiagnosticos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHisDiagn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historialMedicoDataSet)).EndInit();
             this.historialDiagnosticosToolStrip.ResumeLayout(false);
@@ -220,7 +273,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHisDiagn;
         private HistorialMedicoDataSet historialMedicoDataSet;
         private System.Windows.Forms.BindingSource pacientesBindingSource;
         private HistorialMedicoDataSetTableAdapters.PacientesTableAdapter pacientesTableAdapter;
@@ -240,5 +293,9 @@
         private System.Windows.Forms.ToolStripTextBox fecha2ToolStripTextBox;
         private System.Windows.Forms.ToolStripButton historialDiagnosticosToolStripButton;
         private System.Windows.Forms.Button btnPrincipal;
+        private System.Windows.Forms.ToolStripLabel lbDiagnostico;
+        private System.Windows.Forms.ToolStripComboBox cbbDiagnBus;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
